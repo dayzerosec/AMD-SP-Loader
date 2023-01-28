@@ -1,0 +1,29 @@
+{
+   "pluginmetadataversion": 2,
+   "name": "AMD-SP/PSP Loader",
+   "author": "dayzerosec",
+   "type": [
+      "binaryview"
+   ],
+   "api": [
+      "python3"
+   ],
+   "description": "Loader for AMD-SP or PSP firmware binaries.",
+   "longdescription": "# AMD-SP/PSP Loader \n\nAuthor: **SpecterDev**\n\n_Loader for AMD-SP or PSP firmware binaries._\n\n![](https://i.imgur.com/MH9C1hu.png)\n\n## Description\n\nBinary Ninja loader for AMD Secure Processor (SP) / Platform Security Processor (PSP) firmware binaries. It will try to load AGESA Bootloader (ABL) and Bootloader blobs and will setup the correct load addresses.\n\nThe ABL loader will also optionally annotate syscalls using the dictionary in `./data/syscalls.json`.\n\n## Usage\n\nThis loader is intended to be used with binaries extracted via [PSPTool](https://github.com/PSPReverse/PSPTool), as this loader will **not extract firmware from UEFI or perform any decompression before loading**.\n\nSimply load an `ABL*` or `PSP_FW_BOOTLOADER_*` binary to use the loader. Your view name on the top left of the disassembly pane should have an `AMD-SP` prefix. If your particular firmware blob doesn't load and/or loads at an incorrect address, please file an issue.\n\n## Future Work / Places for Contribution\n\n- [ ] Currently load addresses are static, perhaps this should be reworked to dynamically determine it via parsing entrypoint instructions?\n- [ ] Add loaders for other firmwares\n  - [ ] SMU (xtensa)\n  - [ ] Trusted OS (tOS)\n  - [ ] Boot time trustlets\n- [ ] Reverse and add more syscalls to the annotation dictionary\n- [ ] Improve annotations to fix-up syscalls in HLIL\n\n## Notes\n\n- The loaders make some assumptions on the load address and such, so its possible a particular binary differs and won't load properly (open an issue).\n\n## Minimum Version\n\nThis plugin requires the following minimum version of Binary Ninja:\n * release - 3.2.3814\n\n## License\n\nThis plugin is released under a MIT license.\n",
+   "license": {
+      "name": "MIT",
+      "text": "Copyright 2023 dayzerosec\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+   },
+   "platforms": [
+      "Darwin",
+      "Windows",
+      "Linux"
+   ],
+   "installinstructions": {
+      "Darwin": "",
+      "Windows": "",
+      "Linux": ""
+   },
+   "version": "1.0",
+   "minimumbinaryninjaversion": 3814
+}
