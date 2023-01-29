@@ -16,7 +16,7 @@ The ABL loader will also optionally annotate syscalls using the dictionary in [.
 To install this plugin, go to Binary Ninja's plugin directory (can be found by going to Tools -> "Open Plugin Folder"), and run the following command:
 
 ```
-git clone https://github.com/Cryptogenic/AMD-SP-Loader
+git clone https://github.com/dayzerosec/AMD-SP-Loader
 ```
 
 Note you'll probably need to restart Binary Ninja for the plugin to load.
